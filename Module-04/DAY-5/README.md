@@ -1,51 +1,75 @@
-# Ex.No:4(E)  PARAMETERIZED CONSTRUCTOR
+# Ex.No:4(D) FINAL & STATIC IN JAVA
+
 ## AIM:
-To write a parameterized constructor in the Employee class that initializes name and designation, and then call getter methods in the main() method of another class (Sample) to display the values.
-
+   To create a Java program to perform final & static keyword for below situation Employee object contains member 'Emp_Id'. It contains object named name, which contains its own informations such as Fname, Mname, Lname.
+ 
 ## ALGORITHM :
-
-	1.	Start the program.
-2.	Define a class Employee:
-    a.	  Declare two private string variables: name and designation.
-3.	Create a parameterized constructor in Employee:
-4.	Accept two parameters: name and designation.
-5.	Assign the parameters to the class fields.
-6.	Define two getter methods in the Employee class:
-     a.	getName() – returns the value of name.
-     b.	getDesg() – returns the value of designation.
-7.	Create another class Sample with the main method.
-8.	Inside the main method:
-     a.	Create an object of Employee using the constructor and pass "John" and "Asst.Manager" as arguments.
-     b.	Call getName() and store the result in a variable empName.
-     c.	Call getDesg() and store the result in a variable empDesg.
-9.	Print the values of empName and empDesg.
-10.	End the program
-
+1.	Start the Program.
+2.	Define class `Name`:
+-	a) Declare three `String` variables: `Fname`, `Mname`, and `Lname`
+-	b) Define method `dispName(String fn, String mn, String ln)`:
+-	i) Print the full name using the passed parameters `fn`, `mn`, and `ln`
+3.	Define class `Employee`:
+-	a) Declare an integer variable `Emp_Id`
+-	b) Create an instance of `Name` called `obj`
+-	c) Define method `disp(int id)`:
+-	i) Print the employee ID
+-	ii) Create a new `Name` object and call `dispName("B", "Leo", "John")` to display the name
+4.	Define `Main` class with `main` method:
+-	a) Create an `Employee` object `emp`
+-	b) Call `emp.disp(101)` to display the employee details
+5.	End
 
 ## PROGRAM:
  ```
-/*
-Program to implement a Parameterized Constructor Using Java
-Developed by: 
-RegisterNumber:  
-*/
+
+Program to implement a final & Static using Java
+Developed by: NANDIKA S
+RegisterNumber: 212224230175
 ```
 
 ## Sourcecode.java:
+```
+class Name
+{
+    String Fname;
+    String Mname;
+    String Lname;
+    void dispName(String fn,String mn,String ln)
+    {
+        Fname=fn;
+        Mname=mn;
+        Lname=ln;
+        System.out.println(Fname+" "+Mname+" "+Lname);
+    }
+}
+class Employee
+{
+    int Emp_Id;
+    Name obj=new Name();
+    void dispName(int id,String fn,String mn,String ln)
+    {
+        Emp_Id=id;
+        System.out.println(Emp_Id);
+        obj.dispName(fn,mn,ln);
+    }
+    
+}
 
-
-
-
-
-
+public class Main
+{
+    public static void main(String[] args)
+    {
+      Employee e1=new Employee();
+      e1.dispName(101,"B","Leo","John");
+        
+    }
+}
+```
 
 ## OUTPUT:
 
-
+![image](https://github.com/user-attachments/assets/b05b5aae-7714-4702-861c-73f9bdd5c55d)
 
 ## RESULT:
-Thus, the  java program was successfully demonstrates the use of a parameterized constructor to initialize class fields.
-
- 
-
-
+Thus, the java program to perform final & static keyword was executed successfully.
